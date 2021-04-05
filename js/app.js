@@ -21,11 +21,6 @@ pauseButton.addEventListener("click", pauseRecording);
 function startRecording() {
 	console.log("recordButton clicked");
 
-	/*
-		Simple constraints object, for more advanced audio features see
-		https://addpipe.com/blog/audio-constraints-getusermedia/
-	*/
-    
     var constraints = { audio: true, video:false }
 
  	/*
@@ -36,10 +31,6 @@ function startRecording() {
 	stopButton.disabled = false;
 	pauseButton.disabled = false
 
-	/*
-    	We're using the standard promise based getUserMedia() 
-    	https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
-	*/
 
 	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
 		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
